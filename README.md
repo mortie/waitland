@@ -13,6 +13,10 @@ when the Wayland compositor exits.
 
 Waitland is licensed under the MIT license.
 
+## Packages
+
+* Fedora (Copr): [xmort/waitland](https://copr.fedorainfracloud.org/coprs/xmort/waitland/) (Official)
+
 ## Compile
 
 To build Waitland, simply run `make`.
@@ -31,7 +35,8 @@ The only dependency is `wayland-client`. It can be installed with:
 ```
 Usage: waitland [options] [command...].
 Options:
-  -h, --help:  Show this help message.
+  -h, --help:  Print this help message and exit.
+  --version:   Print version and exit.
   -q, --quiet: Disable log messages.
 ```
 
