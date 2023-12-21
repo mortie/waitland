@@ -11,6 +11,8 @@ wayland compositor and then kill that child process when the connection closes.
 The indeded use-case is for scriptch which need to clean up after themselves
 when the Wayland compositor exits.
 
+Waitland is licensed under the MIT license.
+
 ## Compile
 
 To build Waitland, simply run `make`.
