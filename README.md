@@ -1,9 +1,12 @@
-# Waitland: wait until the Wayland compositor exits
+# Waitland: Wait until the Wayland compositor exits
 
-Waitland is the simplest possible Wayland client program.
+Waitland is the simplest possible Wayland client.
 Its only purpose is to create a connection to the Wayland compositor,
 then do absolutely nothing until the connection closes,
 at which point waitland will exit.
+
+Optionally, you can also make it spawn a child process after connecting to the
+wayland compositor and then kill that child process when the connection closes.
 
 The indeded use-case is for scriptch which need to clean up after themselves
 when the Wayland compositor exits.
