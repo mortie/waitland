@@ -64,7 +64,7 @@ Restart Sway a bunch more times and you'll suddenly have dozens of unkillable ki
 Disaster!
 
 Waitland to the rescue! We just need to modify `~/.config/sway/config` to
-run the scratchpad.sh script with using waitland.
+run the scratchpad.sh script under waitland.
 
 Replace:
 
@@ -78,14 +78,14 @@ with:
 exec waitland /path/to/scratchpad.sh
 ```
 
-and the kitty horde will cease.
+and the kitty hordes will cease.
 
 ## Example: Making the script itself smarter with waitland
 
 In the previous example, the script remained naive, and we fixed it by
 running it with putting `waitland` in the Sway config.
 That works well, but in some cases, it would be nice if the script itself was
-smart enough to exit when the compositor died.
+smart enough to exit when the compositor dies.
 
 We can modify the `scratchpad.sh` script like this:
 
@@ -96,7 +96,7 @@ while :; do
     kitty --class scratchpad
     echo "Kitty exited with code $?, restarting" >&2
 done &
-kitty_spawner=$?
+kitty_spawner=$!
 
 # Wait for the compositor to die
 waitland
