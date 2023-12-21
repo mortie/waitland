@@ -42,7 +42,9 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	fputs("waitland: Connected.\n", stderr);
+	if (!quiet) {
+		fputs("waitland: Connected.\n", stderr);
+	}
 
 	pid_t child = -1;
 	if (cmd) {
@@ -56,7 +58,10 @@ int main(int argc, char **argv) {
 	// Wait for the compositor connection to close
 	while (wl_display_dispatch(disp) > 0);
 
-	fputs("waitland: Connection to compositor closed. Exiting.\n", stderr);
+	if (!quiet) {
+		fputs("waitland: Connection to compositor closed. Exiting.\n", stderr);
+	}
+
 	if (child >= 0) {
 		if (kill(child, SIGTERM) < 0) {
 			perror("waitland: Killing child process failed");

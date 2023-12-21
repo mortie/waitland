@@ -24,7 +24,7 @@ The only dependency is `wayland-client`. It can be installed with:
 ## Usage
 
 ```
-Usage: waitland [options] -- Wait until the Wayland compositor exits.
+Usage: waitland [options] [command...].
 Options:
   -h, --help:  Show this help message.
   -q, --quiet: Disable log messages.
