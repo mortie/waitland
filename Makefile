@@ -1,4 +1,6 @@
-CFLAGS := $(shell pkg-config --cflags wayland-client) $(CFLAGS)
+VERSION = 1.0.0
+
+CFLAGS := $(shell pkg-config --cflags wayland-client) $(CFLAGS) -DWAITLAND_VERSION='"$(VERSION)"'
 LDFLAGS := $(shell pkg-config --libs wayland-client) $(LDFLAGS)
 
 PREFIX ?= /usr/local

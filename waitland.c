@@ -4,12 +4,17 @@
 #include <spawn.h>
 #include <signal.h>
 
+#ifndef WAITLAND_VERSION
+#define WAITLAND_VERSION "<unknown>"
+#endif
+
 extern char **environ;
 
 static void usage(char *argv0) {
 	printf("Usage: %s [options] [command...].\n", argv0);
 	puts("Options:");
-	puts("  -h, --help:  Show this help message.");
+	puts("  -h, --help:  Print this help message and exit.");
+	puts("  --version:   Print version and exit.");
 	puts("  -q, --quiet: Disable log messages.");
 }
 
@@ -23,6 +28,9 @@ int main(int argc, char **argv) {
 			quiet = 1;
 		} else if (strcmp(arg, "--help") == 0 || strcmp(arg, "-h") == 0) {
 			usage(argv[0]);
+			return 0;
+		} else if (strcmp(arg, "--version") == 0) {
+			printf("waitland %s\n", WAITLAND_VERSION);
 			return 0;
 		} else if (strcmp(arg, "--") == 0) {
 			cmd = &argv[i] + 1;
