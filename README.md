@@ -24,7 +24,7 @@ The only dependency is `wayland-client`. It can be installed with:
 
 * Fedora: `sudo dnf install wayland-devel`
 * Debian/Ubuntu: `sudo apt install libwayland-dev`
-* Arch Linux: `sudo apt install wayland` (though you probably have this installed already)
+* Arch Linux: `sudo pacman -S wayland` (though you probably have this installed already)
 
 ## Usage
 
